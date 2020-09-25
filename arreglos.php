@@ -29,15 +29,26 @@ echo ($productosAsociados['producto1']);
 //arreglo de numeros
 echo ("<br>");
 $numeros = array(1,2,3,4,5,6,7,8,9,10);
-for($centinela=0;$centinela<10;$centinela++)
+/*for($centinela=0;$centinela<10;$centinela++)
 {
     echo ($numeros[$centinela]);
     echo ("<br>");
 
+}*/
+/*foreach($numeros as $valor)
+{
+  if($valor==3)
+  {
+      echo ($valor);
+  }
+}*/
+foreach($productosAsociados as $clave=>$valor)
+{
+    echo($valor);
+    echo ("<br>");
 }
 
 
-print_r ($numeros);
 
 
 ?>
