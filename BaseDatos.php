@@ -66,6 +66,24 @@ class BaseDatos
 
     }
 
+    public function consultarDatos($consultaSQL)
+    {
+
+        $conexionBD=$this->conectarBD();
+
+        $consultarDatos=$conexionBD->prepare($consultaSQL);
+
+        //establecer el metodo de consulta
+        $consultarDatos->setFetchMode(PDO::FETCH_ASSOC);
+
+        //ejecutar la opracion de la base de datos
+        $resultado=$consultarDatos->execute();
+        //retorne datos consultados
+        return($consultarDatos->fetchAll());
+
+
+    }
+
 
 
 }
