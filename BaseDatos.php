@@ -14,16 +14,16 @@ class BaseDatos
         /*
         $datosBD="mysql:host=localhost;dbname=tiendajueves";
 
-        $conexionBD= new PDO($datosBD,$this->usuarioBD,$this->passwordBD);*/
-/*
+        $conexionBD= new PDO($datosBD,$this->usuarioBD,$this->passwordBD);
+
         if($conexionBD){
             echo("exito");
         }
         else{
             echo("error");
-        }
+        }*/
 
-*/
+
         //manejo de exepciones
       
         try{
@@ -84,11 +84,24 @@ class BaseDatos
 
     }
 
+    public function eliminarDatos($consultaSQL)
+    {
+
+        $conexionBD=$this->conectarBD();
+
+        $eliminarDatos=$conexionBD->prepare($consultaSQL);
+
+        $resultado=$eliminarDatos->execute();
+
+        if($resultado){
+
+            echo("Usuario eliminado");
+        }else{
+            echo("error");
+        }        
+
+    }
 
 
-}
 
-
-
-
-?>
+}?>
