@@ -102,6 +102,24 @@ class BaseDatos
 
     }
 
+    public function editarDatos($consultaSQL)
+    {
+
+        $conexionBD=$this->conectarBD();
+
+        $editarDatos=$conexionBD->prepare($consultaSQL);
+
+        $resultado=$editarDatos->execute();
+
+        if($resultado){
+
+            echo("Usuario Editado");
+        }else{
+            echo("error");
+        }        
+
+    }
+
 
 
 }?>
